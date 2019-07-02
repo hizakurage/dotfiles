@@ -1,0 +1,8 @@
+[alias]
+    ga = log --graph --decorate=short --oneline --all
+    g  = log --graph --decorate=short --oneline
+    co = checkout
+
+[user]
+    name = hizakurage
+    email = hizakurage@gmail.com

@@ -23,6 +23,7 @@ function deploy() {
 deploy .emacs.d/init.el ~/.emacs.d
 
 # git
+deploy .gitconfig
 deploy .gitignore
 
 # tmux
