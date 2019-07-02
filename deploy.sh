@@ -29,7 +29,5 @@ deploy .gitignore
 deploy .tmux.conf
 
 # zsh
-deploy .zprofile
 deploy .zshrc
 deploy .zlogin
-deploy .zshenv
