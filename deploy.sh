@@ -32,3 +32,6 @@ deploy .tmux.conf
 # zsh
 deploy .zshrc
 deploy .zlogin
+
+# ipython
+deploy ipython_config.py ~/.ipython/profile_default/
