@@ -3,6 +3,5 @@
     g  = log --graph --decorate=short --oneline
     co = checkout
 
-[user]
-    name = hizakurage
-    email = hizakurage@gmail.com
+[include]
+    path = ~/.gitconfig.local
