@@ -64,7 +64,10 @@
 (el-get-bundle popwin)
 (el-get-bundle volatile-highlights)
 (el-get-bundle yaml-mode)
-(el-get-bundle emacswiki:fuzzy-format)
+(el-get-bundle emacswiki:fuzzy-format
+  (require 'fuzzy-format)
+  (setq fuzzy-format-default-indent-tabs-mode nil)
+  (global-fuzzy-format-mode t))
 (el-get-bundle gtags
   :url "http://cvs.savannah.gnu.org/viewvc/*checkout*/global/global/gtags.el"
   (require 'gtags)
