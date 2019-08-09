@@ -40,8 +40,9 @@
                         :background "orange")
     (set-face-attribute 'company-scrollbar-bg nil
                         :background "gray40")
-    (define-key company-active-map (kbd "C-s") 'company-filter-candidates)
-  (global-company-mode)))
+    (define-key company-active-map (kbd "C-s") 'company-filter-candidates))
+  (global-company-mode))
+
 (el-get-bundle dash)
 (el-get-bundle fill-column-indicator)
 (el-get-bundle flycheck
