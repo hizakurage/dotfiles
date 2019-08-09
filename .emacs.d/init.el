@@ -48,6 +48,7 @@
 (el-get-bundle flycheck
   ;; https://www.flycheck.org/en/latest/user/installation.html
   (add-hook 'after-init-hook #'global-flycheck-mode)
+  (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))
   )
 (el-get-bundle go-mode)
 (el-get-bundle google-translate)
