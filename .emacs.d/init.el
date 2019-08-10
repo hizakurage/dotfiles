@@ -56,7 +56,10 @@
   ;; https://qiita.com/jabberwocky0139/items/86df1d3108e147c69e2c
   (helm-mode 1)
   (global-set-key (kbd "M-y") 'helm-show-kill-ring)
-  (global-set-key (kbd "C-x t") 'helm-recentf))
+  (global-set-key (kbd "C-x t") 'helm-recentf)
+  (global-set-key (kbd "<help> w") 'helm-man-woman)
+  (global-set-key (kbd "M-x") 'helm-M-x)
+  (global-set-key (kbd "M-:") 'helm-eval-expression))
 (el-get-bundle magit
   (global-set-key (kbd "C-x g") 'magit-status))
 (el-get-bundle markdown-mode
@@ -239,6 +242,7 @@
 (global-set-key (kbd "C-m") 'sane-newline)
 (global-set-key (kbd "C-n") 'sane-next-line)
 (global-set-key (kbd "C-p") 'sane-previous-line)
+(global-set-key (kbd "M-c") 'help-command)
 
 ;; The opposite of forward-window
 (defun backward-window ()
