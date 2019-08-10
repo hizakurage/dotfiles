@@ -24,7 +24,7 @@ deploy .emacs.d/init.el ~/.emacs.d
 
 # git
 deploy .gitconfig
-deploy .gitignore
+deploy .gitignore_global
 
 # tmux
 deploy .tmux.conf
