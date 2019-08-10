@@ -72,23 +72,21 @@
   (require 'fuzzy-format)
   (setq fuzzy-format-default-indent-tabs-mode nil)
   (global-fuzzy-format-mode t))
-(el-get-bundle gtags
-  :url "http://cvs.savannah.gnu.org/viewvc/*checkout*/global/global/gtags.el"
-  (require 'gtags)
-  (add-hook 'c-mode-hook 'gtags-mode)
-  (add-hook 'c-mode-common-hook 'gtags-mode)
-  (add-hook 'c++-mode-hook 'gtags-mode)
-  (add-hook 'java-mode-hook 'gtags-mode)
-  (add-hook 'gtags-mode-hook
+(el-get-bundle helm-gtags
+  (add-hook 'helm-gtags-mode-hook
             (lambda ()
-              (local-set-key (kbd "M-t") 'gtags-find-tag)
-              (local-set-key (kbd "M-a") 'gtags-pop-stack)
-              (local-set-key (kbd "M-r") 'gtags-find-rtag)
-              (local-set-key (kbd "M-s") 'gtags-find-symbol)
-              (local-set-key (kbd "M-j") 'gtags-find-pattern)))
-  (add-hook 'gtags-select-mode-hook
-            (lambda ()
-              (local-set-key (kbd "M-a") 'gtags-pop-stack))))
+              (local-set-key (kbd "M-t") 'helm-gtags-find-tag)
+              (local-set-key (kbd "M-a") 'helm-gtags-pop-stack)
+              (local-set-key (kbd "M-r") 'helm-gtags-find-rtag)
+              (local-set-key (kbd "M-s") 'helm-gtags-find-symbol)
+              (local-set-key (kbd "M-j") 'helm-gtags-find-pattern)))
+  (add-hook 'c-mode-hook 'helm-gtags-mode)
+  (add-hook 'c-mode-common-hook 'helm-gtags-mode)
+  (add-hook 'c++-mode-hook 'helm-gtags-mode)
+  (add-hook 'java-mode-hook 'helm-gtags-mode)
+  (add-hook 'python-mode-hook 'helm-gtags-mode)
+  (add-hook 'ruby-mode-hook 'helm-gtags-mode))
+
 (el-get-bundle m4-mode
   :url "https://raw.githubusercontent.com/jwiegley/emacs-release/master/lisp/progmodes/m4-mode.el"
   (require 'm4-mode))
