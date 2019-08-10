@@ -4,7 +4,10 @@
     co = checkout
 
 [url "git@github.com:"]
-	pushinsteadof = https://github.com/
+    pushinsteadof = https://github.com/
 
 [include]
     path = ~/.gitconfig.local
+
+[core]
+    excludesfile = /home/hizakurage/.gitignore_global
