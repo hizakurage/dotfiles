@@ -103,6 +103,7 @@ bindkey -e
 alias ls='ls --color=auto'
 alias ll='ls -l'
 alias now='date +%Y-%m-%d--%H-%M-%S'
+alias today='date +%Y-%m-%d'
 alias rpeo=repo
 if [[ -x "${commands[colordiff]}" ]]; then
     alias diff="colordiff"
