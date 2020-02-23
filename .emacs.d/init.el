@@ -115,6 +115,22 @@ translation it is possible to get suggestion."
   (define-key helm-find-files-map (kbd "TAB") 'helm-execute-persistent-action) ;; https://kiririmode.hatenablog.jp/entry/20160216/1455590100
   )
 
+(el-get-bundle helm-gtags
+  (add-hook 'helm-gtags-mode-hook
+            (lambda ()
+              (local-set-key (kbd "M-t") 'helm-gtags-find-tag)
+              (local-set-key (kbd "M-a") 'helm-gtags-pop-stack)
+              (local-set-key (kbd "M-r") 'helm-gtags-find-rtag)
+              (local-set-key (kbd "M-s") 'helm-gtags-find-symbol)
+              (local-set-key (kbd "M-j") 'helm-gtags-find-pattern)))
+  (add-hook 'c-mode-hook 'helm-gtags-mode)
+  (add-hook 'c-mode-common-hook 'helm-gtags-mode)
+  (add-hook 'c++-mode-hook 'helm-gtags-mode)
+  (add-hook 'java-mode-hook 'helm-gtags-mode)
+  (add-hook 'python-mode-hook 'helm-gtags-mode)
+  (add-hook 'ruby-mode-hook 'helm-gtags-mode)
+  (add-hook 'asm-mode-hook 'helm-gtags-mode))
+
 (el-get-bundle magit
   (global-set-key (kbd "C-x g") 'magit-status)
   )
@@ -134,22 +150,6 @@ translation it is possible to get suggestion."
   :features fuzzy-format
   (setq fuzzy-format-default-indent-tabs-mode nil)
   (global-fuzzy-format-mode t))
-
-(el-get-bundle helm-gtags
-  (add-hook 'helm-gtags-mode-hook
-            (lambda ()
-              (local-set-key (kbd "M-t") 'helm-gtags-find-tag)
-              (local-set-key (kbd "M-a") 'helm-gtags-pop-stack)
-              (local-set-key (kbd "M-r") 'helm-gtags-find-rtag)
-              (local-set-key (kbd "M-s") 'helm-gtags-find-symbol)
-              (local-set-key (kbd "M-j") 'helm-gtags-find-pattern)))
-  (add-hook 'c-mode-hook 'helm-gtags-mode)
-  (add-hook 'c-mode-common-hook 'helm-gtags-mode)
-  (add-hook 'c++-mode-hook 'helm-gtags-mode)
-  (add-hook 'java-mode-hook 'helm-gtags-mode)
-  (add-hook 'python-mode-hook 'helm-gtags-mode)
-  (add-hook 'ruby-mode-hook 'helm-gtags-mode)
-  (add-hook 'asm-mode-hook 'helm-gtags-mode))
 
 (el-get-bundle m4-mode
   :url "https://raw.githubusercontent.com/jwiegley/emacs-release/master/lisp/progmodes/m4-mode.el"
