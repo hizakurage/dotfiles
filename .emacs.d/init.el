@@ -17,8 +17,10 @@
 
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 
-;; From recipes
+(el-get-bundle with-eval-after-load-feature) ;; From el-get.info
+
 (el-get-bundle ag)
+
 (el-get-bundle company-mode
   ;; https://github.com/company-mode/company-mode/issues/227
   (with-eval-after-load 'company
@@ -44,12 +46,14 @@
   (global-company-mode))
 
 (el-get-bundle dash)
+
 (el-get-bundle fill-column-indicator)
+
 (el-get-bundle flycheck
   ;; https://www.flycheck.org/en/latest/user/installation.html
   (add-hook 'after-init-hook #'global-flycheck-mode)
-  (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))
-  )
+  (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc)))
+
 (el-get-bundle go-mode)
 (el-get-bundle google-translate)
 (el-get-bundle helm
@@ -61,17 +65,24 @@
   (global-set-key (kbd "M-x") 'helm-M-x)
   (global-set-key (kbd "M-:") 'helm-eval-expression))
 (el-get-bundle magit
-  (global-set-key (kbd "C-x g") 'magit-status))
+  (global-set-key (kbd "C-x g") 'magit-status)
+  )
+
 (el-get-bundle markdown-mode
   (global-set-key (kbd "C-c m") 'markdown-mode)
   )
+
 (el-get-bundle popwin)
+
 (el-get-bundle volatile-highlights)
+
 (el-get-bundle yaml-mode)
+
 (el-get-bundle emacswiki:fuzzy-format
   (require 'fuzzy-format)
   (setq fuzzy-format-default-indent-tabs-mode nil)
   (global-fuzzy-format-mode t))
+
 (el-get-bundle helm-gtags
   (add-hook 'helm-gtags-mode-hook
             (lambda ()
@@ -89,7 +100,7 @@
 
 (el-get-bundle m4-mode
   :url "https://raw.githubusercontent.com/jwiegley/emacs-release/master/lisp/progmodes/m4-mode.el"
-  (require 'm4-mode))
+  :features m4-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; recentf
