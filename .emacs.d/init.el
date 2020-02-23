@@ -23,7 +23,9 @@
 
 (el-get-bundle company-mode
   ;; https://github.com/company-mode/company-mode/issues/227
-  (with-eval-after-load 'company
+  ;; https://tarao.hatenablog.com/entry/20150221/1424518030#tips-byte-compilation
+  (with-eval-after-load-feature 'company
+
     ;; https://qiita.com/syohex/items/8d21d7422f14e9b53b17
     (setq company-idle-delay 0)
     (setq company-minimum-prefix-length 2)
