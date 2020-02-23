@@ -125,7 +125,7 @@ translation it is possible to get suggestion."
 (el-get-bundle yaml-mode)
 
 (el-get-bundle emacswiki:fuzzy-format
-  (require 'fuzzy-format)
+  :features fuzzy-format
   (setq fuzzy-format-default-indent-tabs-mode nil)
   (global-fuzzy-format-mode t))
 
