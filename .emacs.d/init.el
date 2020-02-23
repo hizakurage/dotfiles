@@ -17,7 +17,7 @@
 
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 
-(el-get-bundle with-eval-after-load-feature) ;; From el-get.info
+(el-get-bundle with-eval-after-load-feature) ;; https://tarao.hatenablog.com/entry/20150221/1424518030
 
 (el-get-bundle ag)
 
