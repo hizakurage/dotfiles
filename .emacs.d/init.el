@@ -372,6 +372,9 @@ translation it is possible to get suggestion."
              (hs-minor-mode 1)))
 (define-key hs-minor-mode-map (kbd "C-c TAB") 'hs-toggle-hiding)
 
+;; Copy current word w/ F5 as Hidemaru
+(global-set-key (kbd "<f5>") '(lambda () (interactive) (kill-new (current-word))))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Python
