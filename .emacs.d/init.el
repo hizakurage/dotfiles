@@ -315,7 +315,7 @@ translation it is possible to get suggestion."
 (global-set-key (kbd "C-m") 'sane-newline)
 (global-set-key (kbd "C-n") 'sane-next-line)
 (global-set-key (kbd "C-p") 'sane-previous-line)
-(global-set-key (kbd "M-c") 'help-command)
+(global-set-key (kbd "M-?") 'help-command)
 
 ;; The opposite of forward-window
 (defun backward-window ()
