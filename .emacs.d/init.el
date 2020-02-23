@@ -363,6 +363,15 @@ translation it is possible to get suggestion."
 
 (setq-default c-basic-offset 4)
 
+;; hs-minor-mode
+(add-hook 'python-mode-hook
+          '(lambda ()
+             (hs-minor-mode 1)))
+(add-hook 'c-mode-hook
+          '(lambda ()
+             (hs-minor-mode 1)))
+(define-key hs-minor-mode-map (kbd "C-c TAB") 'hs-toggle-hiding)
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Python
