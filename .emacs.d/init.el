@@ -352,6 +352,7 @@ translation it is possible to get suggestion."
 
 ;; Indent without tab
 (setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
 
 ;; New line indentation
 (global-set-key (kbd "C-m") 'newline-and-indent)
