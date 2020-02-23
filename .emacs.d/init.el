@@ -255,11 +255,12 @@ translation it is possible to get suggestion."
 ;; https://stackoverflow.com/questions/16985544/display-function-name-in-status-line
 (which-function-mode 1)
 
-
-;; Padding linum-mode
-(setq linum-format "%d ")
-(put 'upcase-region 'disabled nil)
-(put 'downcase-region 'disabled nil)
+;; line number
+(if (version<= "26.0.50" emacs-version)
+    (global-display-line-numbers-mode)
+  (setq linum-format "%d ")
+  (put 'upcase-region 'disabled nil)
+  (put 'downcase-region 'disabled nil))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
