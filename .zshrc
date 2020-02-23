@@ -131,19 +131,6 @@ alias findf='find . -name '
 
 
 ################################################################################
-# pyenv
-################################################################################
-if [ -d ${HOME}/.pyenv ]; then
-    export PYENV_ROOT="${HOME}/.pyenv"
-    export PATH="${PYENV_ROOT}/bin:$PATH"
-    eval "$(pyenv init -)"
-    if [ -d $(pyenv root)/plugins/pyenv-virtualenv ]; then
-        eval "$(pyenv virtualenv-init -)"
-    fi
-fi
-
-
-################################################################################
 # rbenv
 ################################################################################
 if [ -d ${HOME}/.rbenv ]; then
