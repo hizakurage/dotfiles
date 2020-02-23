@@ -115,6 +115,7 @@ translation it is possible to get suggestion."
 
 (el-get-bundle markdown-mode
   (global-set-key (kbd "C-c m") 'markdown-mode)
+  (setq markdown-fontify-code-blocks-natively t) ;; enable syntax highlight in code block
   )
 
 (el-get-bundle popwin)
