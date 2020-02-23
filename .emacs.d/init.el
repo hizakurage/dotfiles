@@ -106,6 +106,7 @@ translation it is possible to get suggestion."
 (el-get-bundle helm
   ;; https://qiita.com/jabberwocky0139/items/86df1d3108e147c69e2c
   (helm-mode 1)
+  (global-set-key (kbd "C-x C-f") 'helm-find-files)
   (global-set-key (kbd "M-y") 'helm-show-kill-ring)
   (global-set-key (kbd "C-x t") 'helm-recentf)
   (global-set-key (kbd "<help> w") 'helm-man-woman)
