@@ -1,3 +1,5 @@
+# -*- mode: conf-unix -*-
+
 [alias]
     ga = log --graph --decorate=short --oneline --all
     g  = log --graph --decorate=short --oneline
