@@ -153,6 +153,10 @@ translation it is possible to get suggestion."
 
 (el-get-bundle crontab-mode)
 
+(el-get-bundle ace-link
+  ;; for eww
+  (ace-link-setup-default))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; recentf
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
