@@ -111,7 +111,10 @@ translation it is possible to get suggestion."
   (global-set-key (kbd "C-x t") 'helm-recentf)
   (global-set-key (kbd "<help> w") 'helm-man-woman)
   (global-set-key (kbd "M-x") 'helm-M-x)
-  (global-set-key (kbd "M-:") 'helm-eval-expression))
+  (global-set-key (kbd "M-:") 'helm-eval-expression)
+  (define-key helm-find-files-map (kbd "TAB") 'helm-execute-persistent-action) ;; https://kiririmode.hatenablog.jp/entry/20160216/1455590100
+  )
+
 (el-get-bundle magit
   (global-set-key (kbd "C-x g") 'magit-status)
   )
