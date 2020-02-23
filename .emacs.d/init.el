@@ -142,7 +142,8 @@ translation it is possible to get suggestion."
   (add-hook 'c++-mode-hook 'helm-gtags-mode)
   (add-hook 'java-mode-hook 'helm-gtags-mode)
   (add-hook 'python-mode-hook 'helm-gtags-mode)
-  (add-hook 'ruby-mode-hook 'helm-gtags-mode))
+  (add-hook 'ruby-mode-hook 'helm-gtags-mode)
+  (add-hook 'asm-mode-hook 'helm-gtags-mode))
 
 (el-get-bundle m4-mode
   :url "https://raw.githubusercontent.com/jwiegley/emacs-release/master/lisp/progmodes/m4-mode.el"
