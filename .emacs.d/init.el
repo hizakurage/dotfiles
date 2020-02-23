@@ -149,6 +149,8 @@ translation it is possible to get suggestion."
   :url "https://raw.githubusercontent.com/jwiegley/emacs-release/master/lisp/progmodes/m4-mode.el"
   :features m4-mode)
 
+(el-get-bundle toml-mode)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; recentf
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
