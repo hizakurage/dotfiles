@@ -157,6 +157,9 @@ translation it is possible to get suggestion."
   ;; for eww
   (ace-link-setup-default))
 
+(el-get-bundle smex
+  (global-set-key (kbd "M-x") 'smex))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; recentf
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
