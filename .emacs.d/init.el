@@ -311,6 +311,12 @@ translation it is possible to get suggestion."
 (global-set-key (kbd "C-x -") (lambda nil (interactive) (split-window-below) (other-window 1)))
 (global-set-key (kbd "C-x |") (lambda nil (interactive) (split-window-right) (other-window 1)))
 
+;; Window resize
+(global-set-key (kbd "C-c l") (lambda () (interactive) (enlarge-window-horizontally 8)))
+(global-set-key (kbd "C-c h") (lambda () (interactive) (shrink-window-horizontally 8)))
+(global-set-key (kbd "C-c j") (lambda () (interactive) (enlarge-window 8)))
+(global-set-key (kbd "C-c k") (lambda () (interactive) (shrink-window 8)))
+
 ;; Goto line
 (global-set-key (kbd "M-g") 'goto-line)
 
