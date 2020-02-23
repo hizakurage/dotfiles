@@ -361,6 +361,8 @@ translation it is possible to get suggestion."
 ;; Delete rectangle
 (global-set-key (kbd "C-c :") 'delete-rectangle)
 
+(setq-default c-basic-offset 4)
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Python
