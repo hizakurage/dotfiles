@@ -170,6 +170,10 @@ translation it is possible to get suggestion."
 
 (el-get-bundle toml-mode)
 
+(el-get-bundle m4-mode
+  :url "https://raw.githubusercontent.com/jwiegley/emacs-release/master/lisp/progmodes/m4-mode.el"
+  (require 'm4-mode))
+
 (el-get-bundle crontab-mode)
 
 (el-get-bundle ace-link
