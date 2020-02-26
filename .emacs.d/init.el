@@ -6,6 +6,16 @@
 ;; - Install el-get first
 ;;    git clone https://github.com/dimitri/el-get.git ~/.emacs.d/el-get/el-get
 
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; el-get
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
 (unless (require 'el-get nil 'noerror)
@@ -17,6 +27,9 @@
 
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; el-get-bundle
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (el-get-bundle with-eval-after-load-feature) ;; https://tarao.hatenablog.com/entry/20150221/1424518030
 
 (el-get-bundle ag)
@@ -25,7 +38,6 @@
   ;; https://github.com/company-mode/company-mode/issues/227
   ;; https://tarao.hatenablog.com/entry/20150221/1424518030#tips-byte-compilation
   (with-eval-after-load-feature 'company
-
     ;; https://qiita.com/syohex/items/8d21d7422f14e9b53b17
     (setq company-idle-delay 0)
     (setq company-minimum-prefix-length 2)
@@ -109,9 +121,9 @@ translation it is possible to get suggestion."
   (global-set-key (kbd "C-x C-f") 'helm-find-files)
   (global-set-key (kbd "M-y") 'helm-show-kill-ring)
   (global-set-key (kbd "C-x t") 'helm-recentf)
-  (global-set-key (kbd "<help> w") 'helm-man-woman)
+  (global-set-key (kbd "<help> w") 'helm-man-woman) ;; https://www.ncaq.net/2017/11/02/
   (global-set-key (kbd "M-:") 'helm-eval-expression)
-  (define-key helm-find-files-map (kbd "TAB") 'helm-execute-persistent-action) ;; https://kiririmode.hatenablog.jp/entry/20160216/1455590100
+  (define-key helm-find-files-map (kbd "TAB") 'helm-execute-persistent-action) ; https://kiririmode.hatenablog.jp/entry/20160216/1455590100
   )
 
 (el-get-bundle helm-gtags
@@ -165,6 +177,7 @@ translation it is possible to get suggestion."
 (el-get-bundle smex
   (global-set-key (kbd "M-x") 'smex))
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; recentf
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -214,7 +227,7 @@ translation it is possible to get suggestion."
 ;; https://qiita.com/ongaeshi/items/696407fc6c42072add54
 (setq ring-bell-function 'ignore)
 
-;; Hadle escape sequence in shell-mode
+;; Handle escape sequence in shell-mode
 ;; http://d.hatena.ne.jp/hiboma/20061031/1162277851
 (autoload 'ansi-color-for-comint-mode-on
   "ansi-color"
@@ -231,7 +244,9 @@ translation it is possible to get suggestion."
 (add-hook 'comint-output-filter-functions 'comint-watch-for-password-prompt)
 
 ;; Hide menu bar when emacs running in window mode
-(if window-system (menu-bar-mode 1) (menu-bar-mode -1))
+(if window-system
+    (menu-bar-mode 1)
+  (menu-bar-mode -1))
 
 ;; truncate line in divided window
 ;; https://beiznotes.org/200907131247476145-2/
@@ -253,7 +268,6 @@ translation it is possible to get suggestion."
  '(markdown-header-face-4 ((t (:foreground "color-105" :height 1.0))))
  '(markdown-header-face-5 ((t (:foreground "color-219" :weight bold :height 1.0))))
  '(markdown-header-face-6 ((t (:foreground "color-244" :weight bold))))
- '(markdown-italic-face ((t (:inherit nil))))
  '(markdown-list-face ((t (:foreground "color-135"))))
  '(mode-line ((t (:background "color-153" :foreground "black" :box (:line-width -1 :style released-button)))))
  '(mode-line-inactive ((t (:inherit mode-line :background "grey30" :foreground "color-243" :box (:line-width -1 :color "grey40") :weight light)))))
@@ -315,7 +329,7 @@ translation it is possible to get suggestion."
 (global-set-key (kbd "C-m") 'sane-newline)
 (global-set-key (kbd "C-n") 'sane-next-line)
 (global-set-key (kbd "C-p") 'sane-previous-line)
-(global-set-key (kbd "M-?") 'help-command)
+(global-set-key (kbd "M-?") 'help-command) ;; http://flex.phys.tohoku.ac.jp/texi/eljman/eljman_146.html
 
 ;; The opposite of forward-window
 (defun backward-window ()
@@ -323,7 +337,7 @@ translation it is possible to get suggestion."
   (other-window -1))
 (global-set-key (kbd "C-x O") 'backward-window)
 
-;; window split as tmux
+;; Window split as tmux
 (global-set-key (kbd "C-x -") (lambda nil (interactive) (split-window-below) (other-window 1)))
 (global-set-key (kbd "C-x |") (lambda nil (interactive) (split-window-right) (other-window 1)))
 
@@ -336,7 +350,7 @@ translation it is possible to get suggestion."
 ;; Goto line
 (global-set-key (kbd "M-g") 'goto-line)
 
-;; Disable transpose-character w/ C-t
+;; Disable transpose-character w/ C-t avoiding collision for tmux
 (global-set-key (kbd "C-t") nil)
 
 ;; C-h as DEL
@@ -350,7 +364,7 @@ translation it is possible to get suggestion."
 ;; C-k kill whole line at once
 (setq kill-whole-line t)
 
-;; Indent without tab
+;; Indent with 4 spaces without TAB
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 
