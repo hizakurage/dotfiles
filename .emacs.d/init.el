@@ -390,7 +390,7 @@ translation it is possible to get suggestion."
 (add-hook 'c-mode-hook
           '(lambda ()
              (hs-minor-mode 1)))
-(define-key hs-minor-mode-map (kbd "C-c TAB") 'hs-toggle-hiding)
+(define-key global-map (kbd "C-c TAB") 'hs-toggle-hiding)
 
 ;; Copy current word w/ F5 as Hidemaru
 (global-set-key (kbd "<f5>") '(lambda () (interactive) (kill-new (current-word))))
