@@ -253,10 +253,15 @@ function emacs() {
     fi
     emacsclient -t $@
 }
+
 function kill-emacs() {
     if [[ 0 -ne $(ps ax | grep emacs | grep daemon | wc -l) ]]; then
         emacsclient -e '(kill-emacs)'
     fi
+}
+
+function remacs() {
+    kill-emacs && emacs
 }
 
 
