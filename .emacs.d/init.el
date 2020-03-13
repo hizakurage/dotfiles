@@ -192,6 +192,8 @@ translation it is possible to get suggestion."
   (setq plantuml-options "-charset UTF-8")
   )
 
+(el-get-bundle elpa:edit-indirect) ;; For code block in markdown-mode
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; recentf
