@@ -65,9 +65,11 @@
 (el-get-bundle fill-column-indicator)
 
 (el-get-bundle flycheck
-  ;; https://www.flycheck.org/en/latest/user/installation.html
-  (add-hook 'after-init-hook #'global-flycheck-mode)
-  (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc)))
+  (global-flycheck-mode)
+  (with-eval-after-load-feature 'flycheck
+    ;; https://stackoverflow.com/questions/15552349/how-to-disable-flycheck-warning-while-editing-emacs-lisp-scripts
+    (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))
+    (setq flycheck-python-flake8-executable "flake8")))
 
 (el-get-bundle go-mode)
 
@@ -440,6 +442,8 @@ translation it is possible to get suggestion."
  '(flycheck-python-flake8-executable "python3")
  '(flycheck-python-pycompile-executable "python3")
  '(flycheck-python-pylint-executable "python3"))
+(add-hook 'python-mode-hook
+          (setq flycheck-flake8-maximum-line-length 100))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
