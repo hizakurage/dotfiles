@@ -151,8 +151,9 @@ translation it is possible to get suggestion."
 
 (el-get-bundle markdown-mode
   (global-set-key (kbd "C-c m") 'markdown-mode)
-  (setq markdown-fontify-code-blocks-natively t) ;; enable syntax highlight in code block
-  )
+  ;; enable syntax highlight in code block
+  (with-eval-after-load-feature 'markdown-mode
+    (setq markdown-fontify-code-blocks-natively t)))
 
 (el-get-bundle popwin)
 
@@ -189,10 +190,10 @@ translation it is possible to get suggestion."
 (el-get-bundle plantuml-mode
   (add-to-list 'auto-mode-alist '("\.pu$" . plantuml-mode))
   (setq plantuml-jar-path "/usr/share/plantuml/plantuml.jar")
-  (setq plantuml-default-exec-mode 'jar)
-  (setq plantuml-java-options "")
-  (setq plantuml-options "-charset UTF-8")
-  )
+  (with-eval-after-load-feature 'plantuml-mode
+    (setq plantuml-default-exec-mode 'jar)
+    (setq plantuml-java-options "")
+    (setq plantuml-options "-charset UTF-8")))
 
 (el-get-bundle elpa:edit-indirect) ;; For code block in markdown-mode
 
