@@ -199,6 +199,25 @@ translation it is possible to get suggestion."
   :url "https://framagit.org/steckerhalter/discover-my-major/"
   (global-set-key (kbd "<help> C-m") 'discover-my-major))
 
+(el-get-bundle elpy
+  (elpy-enable)
+  (with-eval-after-load-feature 'elpy
+    (setq python-shell-interpreter "ipython3")
+    (setq python-shell-interpreter-args "-i")
+    (setq elpy-rpc-python-command "python3")
+    (setq python-check-command "flake8")
+    (custom-set-variables
+     '(elpy-modules
+       (quote
+        (elpy-module-company
+         elpy-module-eldoc
+         elpy-module-flymake
+         elpy-module-folding
+         elpy-module-pyvenv
+         elpy-module-yasnippet
+         elpy-module-django
+         elpy-module-sane-defaults))))))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; recentf
@@ -417,6 +436,10 @@ translation it is possible to get suggestion."
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (setq python-indent-guess-indent-offset nil)
 (setq python-indent 4)
+(custom-set-variables
+ '(flycheck-python-flake8-executable "python3")
+ '(flycheck-python-pycompile-executable "python3")
+ '(flycheck-python-pylint-executable "python3"))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
