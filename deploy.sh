@@ -33,5 +33,6 @@ deploy .tmux.conf
 deploy .zshrc
 deploy .zlogin
 
-# ipython
+# python
+deploy .flake8
 deploy ipython_config.py ~/.ipython/profile_default/
