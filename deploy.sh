@@ -10,7 +10,7 @@ function deploy() {
     fi
 
     if [ ! -d ${dest_dir} ]; then
-        mkdir ${dest_dir}
+        mkdir -p ${dest_dir}
     fi
 
     echo Deploying $1 as ${dest_dir%/}/$(basename ${file})
@@ -24,7 +24,7 @@ deploy .emacs.d/init.el ~/.emacs.d
 
 # git
 deploy .gitconfig
-deploy .gitignore_global
+deploy ignore ~/.config/git/
 
 # tmux
 deploy .tmux.conf
