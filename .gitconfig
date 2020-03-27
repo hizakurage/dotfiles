@@ -1,7 +1,7 @@
 # -*- mode: conf-unix -*-
 
 [alias]
-    g   = log --graph --decorate=short --oneline
+    g   = log --graph --format=format:'%C(blue bold)%h%C(reset) %C(cyan bold)%ai%C(reset) %C(green bold)(%ar)%C(reset)%C(yellow bold)%d%C(reset)%n''    %C(white)%s%C(reset) %C(dim white)- %an <%aE>%C(reset)'
     ga  = !"git g --all"
     co  = checkout
 
