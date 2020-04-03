@@ -238,6 +238,7 @@ export PATH="${GOPATH}/bin:${PATH}:/usr/local/go/bin"
 ################################################################################
 # mattn/memo
 ################################################################################
+# https://teratail.com/questions/36536
 if (( $+commands[memo] )); then
     alias m="memo"
 fi
